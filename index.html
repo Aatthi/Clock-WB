@@ -165,7 +165,7 @@ within a div so there is no extra scroll on the page. Font-family for entire pag
   <script>
 
     // not how querySelector is used select the class rather than having to say getElementByClassName or get ElementById
-/*       const secondHand = document.querySelector('.second-hand') // select the seconds hand
+    const secondHand = document.querySelector('.second-hand') // select the seconds hand
       const minsHand = document.querySelector('.min-hand') // select the minutes hands
       const hourHand = document.querySelector('.hour-hand') // select the hour hand
 
@@ -200,35 +200,8 @@ within a div so there is no extra scroll on the page. Font-family for entire pag
 
 
       //  1000 ms = 1 second.
-      //  To execute a function only once, after a specified number of milliseconds, use the setTimeout() method. */
-      const secondsHand = document.querySelector('.second-hand');
-      const minsHand = document.querySelector('.min-hand');
-      const hoursHand = document.querySelector('.hour-hand');
-
-
-
-      function setDate() {
-        const now = new Date();
-
-        const seconds = now.getSeconds();
-        const secondsDegree = ((seconds/60) * 360 + 90);
-        secondsHand.style.transform = `rotate(${secondsDegree}deg`;
-
-
-        const mins = now.getMinutes();
-        const minsDegrees = ((mins/60) * 360 + 90);
-        minsHand.style.transform = `rotate(${minsDegrees}deg`;
-
-        const hours = now.getHours();
-        const hourDegrees = ((hours/12) * 360 + 90);
-        hoursHand.style.transform = `rotate(${hourDegrees}deg`;
-
-
-        console.log(seconds)
-
-      }
-
-      setInterval(setDate, 1000)
+      //  To execute a function only once, after a specified number of milliseconds, use the setTimeout() method. 
+ 
     
 
   </script>
