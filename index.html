@@ -163,16 +163,22 @@ within a div so there is no extra scroll on the page. Font-family for entire pag
   </style>
 
   <script>
-      const secondHand = document.querySelector('.second-hand')
-      const minsHand = document.querySelector('.min-hand')
-      const hourHand = document.querySelector('.hour-hand')
+
+    // not how querySelector is used select the class rather than having to say getElementByClassName or get ElementById
+      const secondHand = document.querySelector('.second-hand') // select the seconds hand
+      const minsHand = document.querySelector('.min-hand') // select the minutes hands
+      const hourHand = document.querySelector('.hour-hand') // select the hour hand
 
 
       function setDate() {
-          const now = new Date();
-          const seconds = now.getSeconds();
-          const secondsDegrees = ((seconds / 60) * 360 + 90);
-          secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+          const now = new Date(); // this variable will not change once declared now. 'new' is a black object. 
+          const seconds = now.getSeconds(); // getSeconds()returns specific date to local time
+          const secondsDegrees = ((seconds / 60) * 360 + 90); // this will identify the number for the degree of rotation of the seconds hand. 
+          // seconds is divided by 60 because there are 60 seconds in 1 minute. 
+          // then multiplied by 360 as this is the complete degrees of a full circle. 
+          // then added to 90 deg because I dont know --- need to research again. 
+          secondHand.style.transform = `rotate(${secondsDegrees}deg)`; // 
+
 
           const mins = now.getMinutes();
           const minsDegrees = ((mins / 60) * 360 + 90);
@@ -184,11 +190,18 @@ within a div so there is no extra scroll on the page. Font-family for entire pag
 
 
           console.log(seconds); 
-
+          
 
       }
 
       setInterval(setDate, 1000);
+      //  The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds).
+      //  The setInterval() method will continue calling the function until clearInterval() is called, or the window is closed.
+
+
+      //  1000 ms = 1 second.
+      //  To execute a function only once, after a specified number of milliseconds, use the setTimeout() method.
+
 
   </script>
 </body>
