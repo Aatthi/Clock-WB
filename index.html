@@ -9,16 +9,66 @@
 
     <div class="clock">
       <div class="clock-face">
+        <p class="number number1 flipNumber">1</p>
+        <p class="number number2 flipNumber">2</p>
+        <p class="number number3 flipNumber">3</p>
+        <p class="number number4 flipNumber">4</p>
+        <p class="number number5 flipNumber">5</p>
+        <p class="number number6 flipNumber">6</p>
+        <p class="number number7 flipNumber">7</p>
+        <p class="number number8 flipNumber">8</p>
+        <p class="number number9 flipNumber">9</p>
+        <p class="number number10 flipNumber">10</p>
+        <p class="number number11 flipNumber">11</p>
+        <p class="number number12 flipNumber">12</p>
         <div class="hand hour-hand"></div>
         <div class="hand min-hand"></div>
         <div class="hand second-hand"></div>
+        <!-- <div class="number number1">
+            <p class="flipNumber">1</p>
+        </div>
+        <div class="number number2">
+            <p class="flipNumber">2</p>
+        </div>
+        <div class="number number3">
+            <p class="flipNumber">3</p>
+        </div>
+        <div class="number number4">
+            <p class="flipNumber">4</p>
+        </div>
+        <div class="number number5">
+            <p class="flipNumber">5</p>
+        </div>
+        <div class="number number6">
+            <p class="flipNumber">6</p>
+        </div>
+        <div class="number number7">
+            <p class="flipNumber">7</p>
+        </div>
+        <div class="number number8">
+            <p class="flipNumber">8</p>
+        </div>
+        <div class="number number9">
+            <p class="flipNumber">9</p>
+        </div>
+        <div class="number number10">
+            <p class="flipNumber">10</p>
+        </div>
+        <div class="number number11">
+            <p class="flipNumber">11</p>
+        </div>
+        <div class="number number12">
+            <p class="flipNumber">12</p>
+        </div> -->
+        
+      
       </div>
     </div>
 
 
   <style>
     html {
-      background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+      background: #018DED;
       background-size: cover;
       font-family: 'helvetica neue';
       text-align: center;
@@ -53,19 +103,88 @@
       position: relative;
       width: 100%;
       height: 100%;
+        
       transform: translateY(-3px); /* account for the height of the clock hands */
     }
 
     .hand {
       width: 50%;
       height: 6px;
-      background: black;
+      background: rgba(0, 0, 0, 0.5);
       position: absolute;
       top: 50%;
       transform-origin: 100%;
       transform: rotate(90deg);
       transition: all 0.05s;
       transition-timing-function: cubic-bezier(.42,0,.3,1.8);
+      border-radius: 10px;
+    }
+
+    .clock .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 2.5rem;
+  color: white;
+  margin: 0px;
+  padding: 0;
+
+
+}
+
+.clock .number1 { --rotation: 30deg; }
+.clock .number1 .flipNumber { transform: rotate(-30deg)}
+
+.clock .number2 { --rotation: 60deg; }
+.clock .number2 .flipNumber { transform: rotate(-60deg)}
+
+.clock .number3 { --rotation: 90deg; }
+.clock .number3 .flipNumber { transform: rotate(-90deg)}
+
+.clock .number4 { --rotation: 120deg; }
+.clock .number4 .flipNumber { transform: rotate(-120deg)}
+
+.clock .number5 { --rotation: 150deg; }
+.clock .number5 .flipNumber { transform: rotate(-150deg)}
+
+.clock .number6 { --rotation: 180deg; }
+.clock .number6 .flipNumber { transform: rotate(-180deg)}
+
+.clock .number7 { --rotation: 210deg; }
+.clock .number7 .flipNumber { transform: rotate(-210deg)}
+
+.clock .number8 { --rotation: 240deg; }
+.clock .number8 .flipNumber { transform: rotate(-240deg)}
+
+.clock .number9 { --rotation: 270deg; }
+.clock .number9 .flipNumber { transform: rotate(-270deg)}
+
+.clock .number10 { --rotation: 300deg; }
+.clock .number10 .flipNumber { transform: rotate(-300deg)}
+
+.clock .number11 { --rotation: 330deg; }
+.clock .number11 .flipNumber { transform: rotate(-330deg)}
+
+.clock .number12 { --rotation: 360deg; }
+.clock .number12 .flipNumber { transform: rotate(-360deg)}
+
+.flipNumber { transform: rotate(90deg);}
+
+    .hour-hand{
+        height: 10px;
+    }
+
+    .min-hand{
+        background: rgb(0, 0, 0);
+        height: 4px;
+    }
+
+    .second-hand{
+        background: red;
+        height: 2px;
     }
 
   </style>
