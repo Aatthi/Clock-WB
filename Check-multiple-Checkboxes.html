@@ -93,7 +93,17 @@
     </div>
   </div>
 
-<script>
-</script>
+    <script>
+        const checkbox = document.querySelectorAll('.inbox input[type="checkbox"]');
+
+        let lastChecked;
+
+        function handleEvent (e) {
+            lastChecked = this
+        }
+        
+        checkbox.forEach(checkboxes => checkboxes.addEventListener('click', handleEvent));
+        
+    </script>
 </body>
 </html>
