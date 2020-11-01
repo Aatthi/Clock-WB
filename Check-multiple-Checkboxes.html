@@ -128,15 +128,22 @@
         let lastChecked;
 
         function handleEvent(e) {
-
+            let inBetween = false
             if (e.shiftKey && this.checked){
 
                 checkboxes.forEach(checkbox => {
                 console.log(checkboxes)
-            })
-                if (checkbox === this && checkbox === lastChecked){
-                    console.log("this is checking now!")
+
+                if (checkbox === this || checkbox === lastChecked){
+                        inBetween =! inBetween;
+                        console.log('This is checking now!')
+                    }
+
+                if (inBetween){
+                    checkbox.checked = true;
                 }
+            })
+                
                
             }
 
