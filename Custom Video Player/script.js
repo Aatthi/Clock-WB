@@ -2,12 +2,12 @@
     const player = document.querySelector('.player');
     const video = player.querySelector('.viewer');
     const progress = player.querySelector('.progress');
-    const progressBar = player.querySelector('.progress_filled');
+    const progressBar = player.querySelector('.progress__filled');
 
     const toggle = player.querySelector('.toggle');
     const skipButton = player.querySelectorAll('[data-skip]');
     const ranges = player.querySelectorAll('.player__slider');
-
+    const fullscreen = player.querySelectorAll('.fullscreen__button');
 
 
     // Build Our Functions 
@@ -40,6 +40,22 @@
         progressBar.style.flexBasis = `${percent}%`;
     }
 
+    function scrub(e) {
+        const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+        video.currentTime = scrubTime;
+       
+    }
+
+    function fullScreen() {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+          }
+    }
+
 
   
     // Hook up the Event Listeners
@@ -55,3 +71,11 @@
     ranges.forEach(range => range.addEventListener(' ', handleRangeUpdate));
     ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));  
 
+    
+    let mousedown = false
+    progress.addEventListener('click', scrub);
+    progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
+    progress.addEventListener('mousedown', () => mousedown = true);
+    progress.addEventListener('mouseup', () => mousedown = false);
+
+    fullscreen.addEventListener('click', fullScreen);
