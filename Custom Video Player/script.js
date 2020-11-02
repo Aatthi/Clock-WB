@@ -6,7 +6,7 @@
 
     const toggle = player.querySelector('.toggle');
     const skipButton = player.querySelectorAll('[data-skip]');
-    const ranges = player.querySelectorAll('.player_slider');
+    const ranges = player.querySelectorAll('.player__slider');
 
 
 
@@ -31,7 +31,8 @@
     }
 
     function handleRangeUpdate() {
-        console.log(this.value)
+        video[this.name] = this.value;
+ 
     }
 
 
@@ -44,4 +45,6 @@
     toggle.addEventListener('click', togglePLay);
 
     skipButton.forEach(button => button.addEventListener('click', skip));
-    ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));   
+    
+    ranges.forEach(range => range.addEventListener(' ', handleRangeUpdate));
+    ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));  
