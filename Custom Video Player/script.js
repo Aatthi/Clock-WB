@@ -20,9 +20,13 @@ function togglePLay() {
 }
 
 function updateButton(){ 
-    const icon = this.pause ? '►' : '❚❚';
+    const icon = this.paused ? '►' : '❚❚';
     console.log('Update the button');
     toggle.textContent = icon;
+}
+
+function skip() {
+    console.log('Skipping')
 }
 
 
@@ -33,3 +37,4 @@ video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
 
 toggle.addEventListener('click', togglePLay);
+skipButton.addEventListener(button => button.addEventListener('click', skip))
