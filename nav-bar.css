@@ -53,12 +53,12 @@
 	justify-items: center;
 	align-items: center;
 	width: 100%;
-	grid-gap: 1em;
+	grid-gap: 30px;
 }
 
 .square {
-	height: 200px;
-	width: 200px;
+	height: 300px;
+	width: 300px;
 	border: 1px solid red;
 	margin: 30px 0;
 	transition: all 0.25s;
